@@ -7,9 +7,16 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <% if user_signed_in? %>
+        <%= render 'navs/nav' %>
+        <%= render 'headers/header' %>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

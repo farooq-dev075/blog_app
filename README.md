@@ -1,6 +1,9 @@
 # Blog App
 This is a simple Blog app build in Ruby on Rails.
 
+## Live App
+Live app is runing on https://farooq-blog-app.herokuapp.com/
+
 ## Technology
 * Ruby 2.7.0
 * Bundler 2.1.2

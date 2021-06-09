@@ -1,0 +1,30 @@
+<div class="container px-4 px-lg-5">
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+    <div class="col-md-10 col-lg-8 col-xl-7">
+      <button id='new-post-button' ><%= link_to 'New Post', new_post_path %></button> </br>
+      <hr class="my-4" />
+      <% if @posts.empty? %>
+        Sorry! You have no posts.
+      <% else %>
+        <% @posts.each do |post| %>
+          <%= link_to post_path(post) do %>
+            <div class="post-preview">
+              <h2 class="post-title"><%= post.title %></h2>
+              <p class="post-subtitle"><%= post.body %></p>
+              <p class="post-meta">
+                  Posted by
+                  <%= current_user == post.user ? 'You' : post.user.full_name %>
+                  <%= time_ago_in_words post.created_at %> ago
+              </p>
+              <% if policy(post).destroy? %>
+                <%= link_to 'Edit', edit_post_path(post) %> |
+                <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+            </div>
+          <% end %>
+          <hr class="my-4" />
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
