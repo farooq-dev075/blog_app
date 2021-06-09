@@ -4,6 +4,10 @@ AllCops:
     - 'bin/*'
     - 'node_modules/node-sass/src/libsass/extconf.rb'
     - 'node_modules/node-sass/src/libsass/contrib/libsass.spec'
+    - 'config/initializers/devise.rb'
+    - 'db/schema.rb'
+    - 'db/migrate/20210609143530_devise_create_users.rb'
+
 
 # Customize rules
 Style/FrozenStringLiteralComment:
@@ -20,3 +24,5 @@ Metrics/PerceivedComplexity:
   Max: 10
 Style/GlobalStdStream:
   Enabled: false
+Metrics/BlockLength:
+  Max: 26
