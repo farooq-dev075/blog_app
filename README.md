@@ -1,24 +1,46 @@
-# README
+# Blog App
+This is a simple Blog app build in Ruby on Rails.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Technology
+* Ruby 2.7.0
+* Bundler 2.1.2
+* Rails 6.0.3.7
+* Postgres 13.0
 
-Things you may want to cover:
+## Development
+### 1. Initial Setup
+--------------------
 
-* Ruby version
+Clone the project repo
 
-* System dependencies
+    $ git clone https://github.com/farooq-dev075/blog_app.git
 
-* Configuration
+Get into the project directory
 
-* Database creation
+    $ cd blog_app
+Install gems and their dependencies
 
-* Database initialization
+    $ bundle install
 
-* How to run the test suite
+### 2. Setting up ENV variables
+-------------------------------
+* Copy the environment variables example file
 
-* Services (job queues, cache servers, search engines, etc.)
+Use following command to do so
 
-* Deployment instructions
+    $ cp config/application.example.yml config/application.yml
 
-* ...
+* Set the following ENV Variables in `application.yml` file
+    PG_USERNAME, PG_PASSWORD, PG_HOST
+
+### 3. Database Setup
+---------------------
+Setting up the Database
+
+    $ rails db:create db:migrate
+
+### 4. Start Application Server
+-------------------------------
+Start the Application server
+
+    $ rails s
